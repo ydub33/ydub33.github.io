@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Shrikhand');
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.body_index {
+    animation: body_wait 3s linear;
+}
+
+@keyframes body_wait {
+    0% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/****************************/
+/********** LOADING *********/
+/********** SPINNER *********/
+/****************************/
+
+.body_spin {
+
+    width: 100%;
+    height: 667px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: hideload;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.spinner {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+
+}
+
+.spinner-sector {
+
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 15px solid transparent;
+    mix-blend-mode: overlay;
+
+}
+
+.spinner-text {
+    animation: loading-opacity 2s ease-in-out infinite;
+    font-size: 20px;
+}
+
+.spinner-sector-primary {
+
+    animation: spinrotate 2s ease-out infinite;
+    border-top: 15px solid #9356DC;
+
+
+}
+
+.spinner-sector-secondary {
+
+    animation: spinrotate 1.5s ease-in infinite;
+    border-top: 15px solid #FF79DA;
+
+}
+
+.spinner-sector-tertiary {
+    animation: spinrotate 0.5s ease-in-out infinite;
+    border-top: 15px solid #99E2D0;
+
+}
+
+@keyframes spinrotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-opacity {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes hideload {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+        height: 0px;
+    }
+
+}
+
+/****************************/
+
+header {
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+
+}
+
+.ohmyfood {
+    height: 28px;
+}
+
+.header_menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow {
+    font-size: 18px;
+}
+
+.location {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    text-indent: 10px;
+}
+
+.explorer {
+    height: 287px;
+    background-color: #f0f0f0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.explorer_txt {
+    text-align: center;
+}
+
+.explorer_txt h2 {
+    width: 75%;
+    margin: 10%;
+    text-indent: 1%;
+}
+
+.explorer_txt p {
+    text-indent: 2%;
+}
+
+.explorer_btn,
+.menu_command {
+    display: flex;
+    justify-content: center;
+    width: 58%;
+    background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    border-radius: 25px;
+    height: 50px;
+    box-shadow: 4px 10px 15px #c8c8c8, -1px -1px 5px #c8c8c8;
+
+}
+
+.explorer_btn p,
+.menu_command p {
+    color: white;
+}
+
+.command {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* section fonctionnement */
+
+.sec_fonction {
+    height: 440px;
+    margin-left: 5%;
+    margin-top: 10%;
+
+}
+
+.fct_part {
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+
+}
+
+.fct_btn {
+    height: 75px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    border-radius: 25px;
+    box-shadow: 4px 5px 5px #e0e0e0;;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.list, .store {
+   font-size: 18px;
+   color: gray;
+}
+
+.mobile {
+
+    font-size: 22px;  
+    color: gray;
+}  
+
+
+.fct_btn p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.fct_btn:hover {
+
+    background-color: rgb(147, 86, 220, 0.1);
+
+}
+
+.fct_btn:hover>.fas {
+
+    color: #9356DC;
+
+}
+
+
+.fct_nb {
+    color: white;
+    background-color: #9356DC;
+    border-radius: 50%;
+
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: -4%;
+    z-index: 1;
+}
+
+
+
+/* restaurants */
+
+
+.sec_restau {
+    background-color: #f0f0f0;
+    height: 1220px;
+    width: 100%;
+    padding-top: 5%;
+
+}
+
+.sec_restau h2 {
+    margin-left: 5%;
+
+}
+
+.card {
+    width: 90%;
+    height: 255px;
+    background-color: white;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border-radius: 25px;
+    position: relative;
+    z-index: 0;
+    box-shadow: 4px 10px 15px #c8c8c8, -1px -1px 5px #c8c8c8;
+}
+
+
+.card_img {
+    width: 100%;
+    height: 180px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    object-fit: cover;
+
+
+}
+
+.nouveau {
+    color: #0b916f;
+    font-weight: bolder;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 12px;
+    background-color: #99e2d0;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
+
+.card_desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: -2%;
+}
+
+.card_txt h4 {
+
+
+    margin-bottom: -10%;
+}
+
+.card_heart {
+    font-size: 25px;
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+/* heart solid */
+.hearts {
+    transform: scale(0);
+}
+
+/*heart regular */
+.heartr {
+    transform: scale(1);
+}
+
+
+.heartr:hover+.hearts {
+    transform: scale(1);
+    transition: transform 2s ease-in-out;
+    background: -webkit-linear-gradient(to bottom right, #FF79DA, #9356DC);
+    background: -moz-linear-gradient(to bottom right, #FF79DA, #9356DC);
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+
+.heartr:hover {
+    transform: scale(0);
+    color: rgb(147, 86, 220, 0.8);
+    transition: transform 0.1s ease-in-out 2s;
+}
+
+
+
+/*******************************/
+/******* Menu ******************/
+/*******************************/
+
+.menu h2 {
+
+    font-family: 'Shrikhand';
+
+}
+
+.menu_title {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+}
+
+.menu_title .heart_menu {
+    font-size: 25px;
+}
+
+.menu_pic {
+    height: 260px;
+}
+
+.menu_img {
+
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+
+.menu {
+    background-color: #f0f0f0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    margin-top: -10%;
+    padding-top: 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.menu_part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+/**************************************************/
+/********** animation  apparition du menu *********/
+/**************************************************/
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.menu_btn {
+    height: 70px;
+    width: 94%;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    animation: appear 1.5s ease-in-out both;
+    animation-direction: normal;
+    box-shadow: 4px 5px 5px #e0e0e0;
+    cursor: pointer;
+}
+
+.menu_btn:nth-child(1) {
+    animation-delay: 0.3s
+}
+
+.menu_btn:nth-child(2) {
+    animation-delay: 0.8s
+}
+
+.menu_btn:nth-child(3) {
+    animation-delay: 1.3s
+}
+
+.menu h3 {
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-left: 5%;
+}
+
+.menu h3::after {
+    content: "";
+    display: block;
+    background: #99E2D0;
+    width: 40px;
+    height: 2px;
+}
+
+.btn_price {
+    margin-right: 3%;
+}
+
+
+.btn_txt {
+    width: 75%;
+    margin-left: 5%;
+
+}
+
+.btn_txt p {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+}
+
+.btn_txt h4 {
+    margin-bottom: -3%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+
+
+
+/**************************************************/
+/********** animation  check circle        *********/
+/**************************************************/
+
+
+
+
+.btn_price {
+    
+    margin-right: 5%;
+    font-size: 15px;
+    margin-bottom: -1%;
+
+}
+
+.menu_btn:hover .btn_price {
+    animation: move 0.3s ease-in-out forwards;
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-70px);
+    }
+
+}
+
+.btn_ck {
+
+    height: 70px;
+    position: absolute;
+    right: 0;
+    background: #99E2D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+    opacity: 0;
+    margin-right: 3%;
+
+}
+
+
+.menu_btn:hover .btn_ck {
+
+    width: 16%;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.menu_btn:hover  .btn_txt {
+
+    width: 62%;
+
+
+}
+
+.ck_circle {
+
+    font-size: 25px;
+    color: white;
+}
+
+@keyframes ckrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.menu_btn:hover .ck_circle {
+    opacity: 1;
+    animation: ckrotate 0.6s ease-in-out;
+}
+
+/************************************/
+/************************************/
+/* footer */
+
+footer {
+    padding: 3%;
+    padding-left: 6%;
+    background-color: #403e3e;
+    color: white;
+    height: 200px;
+}
+
+
+footer h2 {
+
+    font-family: 'Shrikhand';
+    font-size: 20px;
+}
+
+.foot_links {
+
+    margin-top: 3%;
+}
+
+.foot_links p {
+
+    margin-left: 2%;
+}
+
+
+
+footer a:link,
+footer a:visited {
+    color: white;
+}
+
+.utensils,
+.partner {
+    padding-right: 2%;
+}
