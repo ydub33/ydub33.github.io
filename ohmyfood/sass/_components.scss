@@ -1,0 +1,242 @@
+/****************************/
+/********** LOADING *********/
+/********** SPINNER *********/
+/****************************/
+
+.body_spin {
+
+    width: 100%;
+    height: 100vh;
+    @include flexcenter;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    animation: hideload forwards;
+    animation-delay: 2s;
+
+}
+
+.spinner {
+
+    position: fixed;
+    @include flexcenter;
+    width: 250px;
+    height: 250px;
+
+}
+
+.spinner-sector {
+
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    border: 15px solid transparent;
+    mix-blend-mode: overlay;
+
+}
+
+.spinner-text {
+    animation: loading-opacity 2s ease-in-out infinite;
+    font-size: 20px;
+}
+
+.spinner-sector-primary {
+
+    animation: spinrotate 1.5s ease-out infinite;
+    border-top: 15px solid $color_primary;
+
+
+}
+
+.spinner-sector-secondary {
+
+    animation: spinrotate 1s ease-in infinite;
+    border-top: 15px solid $color_secondary;
+
+}
+
+.spinner-sector-tertiary {
+    animation: spinrotate 0.5s ease-in-out infinite;
+    border-top: 15px solid $color_tertiary;
+
+}
+
+
+
+/****************************/
+/* button expolere and command */
+
+.explorer_btn,
+.menu_command {
+    display: flex;
+    justify-content: center;
+    width: 58%;
+    background-image: linear-gradient(to bottom right, $color_secondary, $color_primary);
+    border-radius: 25px;
+    height: 50px;
+    @include shadow2;
+
+}
+
+.explorer_btn p,
+.menu_command p {
+    color: white;
+}
+
+.command {
+    height: 150px;
+    @include flexcenter;
+}
+
+/*************************************/
+
+/**************************************************/
+/********** animation  apparition du menu *********/
+/**************************************************/
+
+
+.menu_btn {
+    height: 70px;
+    width: 94%;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    animation: appear 1.5s ease-in-out both;
+    animation-direction: normal;
+    @include shadow1;
+    cursor: pointer;
+}
+
+
+@for $i from 1 through 4 {
+    .menu_btn:nth-child(#{$i}) {
+        animation-delay: (0.3s +(($i)-1)*0.5s);
+    }
+}
+
+.menu h3 {
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-left: 5%;
+}
+
+.menu h3::after {
+    content: "";
+    display: block;
+    background: $color_tertiary;
+    width: 40px;
+    height: 2px;
+}
+
+.btn_price {
+    margin-right: 3%;
+}
+
+
+.btn_txt {
+    width: 75%;
+    margin-left: 5%;
+
+}
+
+.btn_txt p {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+}
+
+.btn_txt h4 {
+    margin-bottom: -3%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+/***************************************/
+/**************************************/
+
+/**************************************************/
+/********** animation  check circle        *********/
+/**************************************************/
+
+.btn_price {
+
+    margin-right: 5%;
+    font-size: 15px;
+    margin-bottom: -1%;
+
+}
+
+.menu_btn:hover .btn_price {
+    animation: move 0.3s ease-in-out forwards;
+}
+
+.menu_btn {
+    position: relative;
+}
+
+.btn_ck {
+
+    height: 70px;
+    position: absolute;
+    right: 0;
+    background: $color_tertiary;
+    @include flexcenter;
+    border-radius: 0 20px 20px 0;
+    opacity: 0;
+/*    margin-right: 3%;
+    @media only screen and (min-width: 900px) {
+        margin-right: 0%;
+    }*/
+
+}
+
+
+.menu_btn:hover .btn_ck {
+
+    width: 16%;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.menu_btn:hover .btn_txt {
+
+    width: 62%;
+    @media only screen and (min-width: 900px) {
+        width: 55%;
+    }
+    @media only screen and (min-width: 1100px) {
+        width: 65%;
+    }
+
+
+}
+
+.ck_circle {
+
+    font-size: 25px;
+    color: white;
+}
+
+
+.menu_btn:hover .ck_circle {
+    opacity: 1;
+    animation: ckrotate 0.6s ease-in-out;
+}
+
+
+/***************************************/
+/***************************************/

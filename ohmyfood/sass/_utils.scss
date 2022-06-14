@@ -1,0 +1,149 @@
+/****************************/
+/*   variables             */
+
+$color_primary: #9356DC;
+$color_secondary: #FF79DA;
+$color_tertiary: #99E2D0;
+
+/****************************/
+/*   mixins             */
+
+@mixin shadow1 {
+    box-shadow: 4px 5px 5px #e0e0e0;
+}
+
+@mixin shadow2 {
+    box-shadow: 4px 10px 15px #c8c8c8, -1px -1px 5px #c8c8c8;
+}
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/****************************/
+/*   keyframes             */
+
+/* keyframes loading spinner */
+
+@keyframes spinrotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-opacity {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes hideload {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+        height: 0px;
+    }
+
+}
+
+/********************************/
+/* keyframes apparition menu */
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/***************************/
+/* keyframes check circle  rotate */
+
+
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-70px);
+        
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    @keyframes move {
+        0% {
+            transform: translateX(0px);
+        }
+    
+        100% {
+            transform: translateX(-140px);
+            
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    @keyframes move {
+        0% {
+            transform: translateX(0px);
+        }
+    
+        100% {
+            transform: translateX(-70px);
+            
+        }
+    }
+}
+
+@keyframes ckrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+/************************************/
+/************************************/
