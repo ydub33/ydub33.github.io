@@ -150,6 +150,7 @@ header {
 .fct_btn:hover {
 
     background-color: rgba(147, 86, 220, 0.1);
+    @include shadow3;
 
 }
 
